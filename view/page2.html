@@ -1,0 +1,15 @@
+<div class="container" ng-controller="secondPageController">
+			<h2>{{page2name}}</h2>
+			<a href='#/'> previous page</a>	
+			
+			
+			<li ng-repeat="personName in data | filter: name">
+			 Name: {{personName.name}}
+			 
+			 Message: {{personName.message}}
+					
+			</li>
+		
+		
+			
+</div>

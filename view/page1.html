@@ -1,0 +1,27 @@
+<html ng-app="myapp">
+<body>
+<div class="container" ng-controller="firstController">
+			<h2>{{pagename}}</h2>
+			
+		<a href='#/page2'> next page</a>	
+		
+		<div id="cont">
+			<li ng-repeat="personName in data | filter: name">
+					<input type="text" ng-model="personName.name" ng-change="data.$save(personName)" />
+					<input type="text" ng-model="personName.message" ng-change="data.$save(personName)" />
+					
+					<button ng-click="data.$remove(personName)">remove</button>
+			</li>
+		
+		</div>
+		
+			<form ng-submit="addNewEntry(newName,newMessage)">
+				<input ng-model="newName" placeholder="Name"/>
+				<input ng-model="newMessage" placeholder="Message"/>	
+			  <button type="submit">add entry</button>
+			</form>
+		
+			
+</div>
+</body>
+</html>
