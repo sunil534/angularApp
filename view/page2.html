@@ -9,7 +9,22 @@
 			 Message: {{personName.message}}
 					
 			</li>
-		
+		<div class="passengerDetails">
+			<h2>Passenger Info</h2>
+				<li ng-repeat="personData in passengerData | filter: name">
+			 Name: {{personData.name}}
+			 
+			 place: {{personData.place}}
+					<a ng-click="removeItem($index)">remove</a>
+			</li>
+			<form ng-submit="addPasInfo(newName,newPlace)">
+				Name: <input ng-model="newName" placeholder="Name"/>
+				Place: <input ng-model="newPlace" placeholder="place"/>	
+			  <button type="submit">add entry</button>
+			</form>
+			
+			
+			</div>
 		
 			
 </div>
